@@ -2,8 +2,6 @@ import express from 'express';
 
 const app = express();
 
-app.use(express.json);
-
 app.get('/users', (request, response) => {
   
   const users = [
@@ -12,7 +10,7 @@ app.get('/users', (request, response) => {
     { name: 'Neuza', age: 62 },
   ]
 
-  response.json(users);
+  return response.send(users);
 });
 
 app.listen(3333);
